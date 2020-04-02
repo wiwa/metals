@@ -70,7 +70,8 @@ object SharedCommand {
             isStrict = false
           )
           symlinkProjectViewRoots(export.project)
-          val updatedZipkin = ZipkinUrls.updateZipkinServerUrl()
+          val updatedZipkin =
+            BloopZipkinTraceProperties.updateBloopTraceProperties()
           if (updatedZipkin) {
             restartBloopServer()
           } else {
